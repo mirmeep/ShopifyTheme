@@ -29,12 +29,12 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/NEW_Tony_Murchison_Art.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "small",
+        "image_height": "large",
         "desktop_content_position": "top-right",
         "show_text_box": false,
         "desktop_content_alignment": "center",
         "color_scheme": "inverse",
-        "image_behavior": "zoom-in",
+        "image_behavior": "fixed",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": false,
         "show_text_below": false
