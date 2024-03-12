@@ -224,3 +224,7 @@ cart-items {
     gap: 1rem;
   }
 }
+
+.cart__dynamic-checkout-buttons .paypalLight {
+  display: none !important;
+  }
