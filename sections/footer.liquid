@@ -320,6 +320,7 @@
               <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
             {%- endform -%}
           </noscript>
+
           <localization-form>
             {%- form 'localization', id: 'FooterLanguageForm', class: 'localization-form' -%}
               <div class="no-js-hidden">
@@ -330,6 +331,16 @@
               </div>
             {%- endform -%}
           </localization-form>
+        {%- endif -%}
+      </div>
+      <div class="footer__column footer__column--info">
+        {%- if section.settings.payment_enable -%}
+          <div class="footer__payment">
+            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+            <ul class="list list-payment" role="list">  
+              <img alt="Credit Card Logos" title="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28" border="0" />
+            </ul>
+          </div>
         {%- endif -%}
       </div>
     </div>
@@ -352,25 +363,6 @@
             {%- endfor -%}
           </ul>
         {%- endif -%}
-      </div>
-      <div style="float:right;">
-        <div class="footer__column footer__column--info">
-          {%- if section.settings.payment_enable -%}
-            <div class="footer__payment">
-              <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-              <ul class="list list-payment" role="list">  
-                <img alt="Credit Card Logos" title="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-sm-4.png" width="198" height="28" border="0" />
-              </ul>
-            </div>
-          {%- endif -%}
-        </div>  
-        <!-- (c) 2005, 2024. Authorize.Net is a registered trademark of CyberSource Corporation --> 
-        <div class="AuthorizeNetSeal"> 
-          <script type="text/javascript" language="javascript">
-            var ANS_customer_id="3cd29268-7a50-4c4f-b54b-8143a2caa903";
-          </script> 
-          <script type="text/javascript" language="javascript" src="//verify.authorize.net:443/anetseal/seal.js" ></script> 
-        </div>     
       </div>
     </div>
   </div>
