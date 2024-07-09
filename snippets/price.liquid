@@ -36,15 +36,16 @@
   
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price 
-    
-  endif
-   
-   for variant in product.variants
+      for variant in product.variants
     if variant.title contains 'Small'
       assign money_price = variant.title
      break
-     endif 
+    endif 
     endfor 
+    
+  endif
+   
+
 -%}
 
 <div
