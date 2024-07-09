@@ -39,7 +39,7 @@
       if variant.title contains 'Small'
         assign money_price = variant.price | money_with_currency
         assign money_price = 'products.product.price.from_price_html' | t: price: money_price
-        assign money_price = money_price | append: ' ' | append: variant.title.size 
+        assign money_price = money_price | append: ' ' | append: variant.title 
         break
       endif 
     endfor   
