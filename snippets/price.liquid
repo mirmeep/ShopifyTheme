@@ -42,6 +42,7 @@
    for variant in product.variants
     if variant.title contains 'Small'
       assign money_price = variant.title
+     break
      endif 
     endfor 
 -%}
