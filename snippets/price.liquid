@@ -51,7 +51,7 @@
     {%- if show_badges %} price--show-badge{% endif -%}
   "
 >
-  {{ product.variants[0] | json }}
+  {{ product.variants[0].title | json }}
   <div class="price__container">
     {%- comment -%}
       Explanation of description list:
