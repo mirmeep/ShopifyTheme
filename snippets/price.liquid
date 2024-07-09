@@ -33,7 +33,7 @@
   endif
 
   if target == product and product.price_varies
-    assign money_price = 'products.product.price.from_price_html' | t: price: money_price 
+    assign money_price = 'products.product.price.from_price_html' | append 'product.variants[0].title' | t: price: money_price 
     
   endif
    
@@ -51,7 +51,6 @@
     {%- if show_badges %} price--show-badge{% endif -%}
   "
 >
-  {{ product.variants[0].title }}
   <div class="price__container">
     {%- comment -%}
       Explanation of description list:
