@@ -86,7 +86,7 @@
           >
             <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
-                Coming Soon!
+                {{ 'products.product.sold_out' | t }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
               {%- endif -%}
@@ -108,7 +108,7 @@
           class="product-form__submit button button--full-width button--primary"
           disabled
         >
-          Coming soon!
+          {{ 'products.product.sold_out' | t }}
         </button>
       </div>
     </div>
