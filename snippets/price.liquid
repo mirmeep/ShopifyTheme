@@ -34,8 +34,9 @@
 
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price | append: 'test'
-  
+    
   endif
+   
 
 -%}
 
@@ -50,6 +51,7 @@
     {%- if show_badges %} price--show-badge{% endif -%}
   "
 >
+  {{ product | json }}
   <div class="price__container">
     {%- comment -%}
       Explanation of description list:
