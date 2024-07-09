@@ -32,12 +32,18 @@
     assign money_price_max = price_max | money_with_currency
   endif
 
+
+  
   if target == product and product.price_varies
     assign money_price = 'products.product.price.from_price_html' | t: price: money_price 
     
   endif
    
-
+   for variant in product.variants
+    if variant.title contains 'Small'
+      assign money_price = 'variant.title'
+     endif 
+    endfor 
 -%}
 
 <div
@@ -51,11 +57,6 @@
     {%- if show_badges %} price--show-badge{% endif -%}
   "
 >
-  {% for variant in product.variants %}
-    {% if variant.title contains "Small" %}
-    {{ variant.title }}
-    {% endif %}
-  {% endfor %}
   
   <div class="price__container">
     {%- comment -%}
