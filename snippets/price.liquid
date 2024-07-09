@@ -36,7 +36,7 @@
   
   if target == product and product.price_varies
     for variant in product.variants
-      if variant.title contains 'Small' && !(if variant.title contains 'Canvas')
+      if variant.title contains 'Small' and if !(variant.title contains 'Canvas')
         assign money_price = variant.price | money_with_currency
         assign money_price = 'products.product.price.from_price_html' | t: price: money_price
         assign money_price = money_price | append: ' (' | append: variant.title | append: ')'
