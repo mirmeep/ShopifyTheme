@@ -40,7 +40,7 @@
         assign variant_price = variant.price | money_with_currency
         assign variant_price_with_text = 'products.product.price.from_price_html' | t: price: variant_price
         assign variant_title = variant.title | split: '/'
-        assign money_price = variant_price_with_text | append: ' ' | append: variant.title 
+        assign money_price = variant_price_with_text | append: ' ' | append: variant_title[1]
         break
       endif 
     endfor   
